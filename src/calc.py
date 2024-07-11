@@ -1,12 +1,20 @@
+import tkinter as tk
+
 from logic import addition, subtraction, multiplication, division
 
 
 class Calc:
     def __init__(self):
+        self.window = tk.Tk()
+        self.window.resizable(False, False)  # TODO Добавить возможность растягивать окно приложения
+        self.window.title("Calculator")
+        self.window.geometry("320x500")  # like windows calculator
+
         self.total_expression = 0
 
     def run(self):
-        print(self.total_expression)
+        self.window.mainloop()  # run calc window
+        """print(self.total_expression)
         user_input = input()
         while user_input != "exit":
             match user_input:
@@ -22,4 +30,4 @@ class Calc:
                 case "c":
                     self.total_expression = 0
             print(self.total_expression)
-            user_input = input()
+            user_input = input()"""
